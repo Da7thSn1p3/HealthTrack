@@ -1,5 +1,7 @@
 package gr.unipi.healthtrack;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -38,7 +40,7 @@ import java.util.List;
 
 public class AddSymptom extends AppCompatActivity {
 
-    String NAME, PHONE, BDATE;
+    String NAME, PHONE, BDATE, Allergy;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
     FirebaseAuth mAuth;
@@ -96,6 +98,43 @@ public class AddSymptom extends AppCompatActivity {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             Symptom = parent.getItemAtPosition(position).toString();
+                            if(Symptom.equals("A92 - Allergy/allergic reaction NOS")){
+                                AlertDialog.Builder adb = new AlertDialog.Builder(AddSymptom.this);
+                                View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
+                                adb.setTitle("Which specific allergy concerns you?");
+                                //adb.setMessage("Selected ");
+                                Spinner mSpinner = (Spinner) mView.findViewById(R.id.spinner_dialog);
+                                ArrayAdapter<String> allergy_adapter = new ArrayAdapter<String>(AddSymptom.this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.Allergy));
+                                allergy_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                mSpinner.setAdapter(allergy_adapter);
+                                mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        Allergy = parent.getItemAtPosition(position).toString();
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+                                adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        setComment(Allergy);
+                                    }
+                                });
+                                adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //null
+                                    }
+                                });
+
+                                adb.setView(mView);
+                                AlertDialog dial = adb.create();
+                                dial.show();
+                            }
                         }
 
                         @Override
@@ -349,6 +388,34 @@ public class AddSymptom extends AppCompatActivity {
             }
         });
 
+         /*
+        if(Symptom.equals("A92 - Allergy/allergic reaction NOS")){
+            AlertDialog.Builder adb = new AlertDialog.Builder(AddSymptom.this);
+            View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
+            adb.setTitle("Which specific allergy concerns you?");
+            //adb.setMessage("Selected ");
+            Spinner mSpinner = (Spinner) mView.findViewById(R.id.spinner_dialog);
+            ArrayAdapter<String> allergy_adapter = new ArrayAdapter<String>(AddSymptom.this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.Allergy));
+            allergy_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            mSpinner.setAdapter(allergy_adapter);
+            Allergy = mSpinner.getSelectedItem().toString();
+
+            adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    setComment(Allergy);
+                }
+            });
+            adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // null button
+                }
+            });
+
+            adb.show();
+        }*/
 
         add_symptom_button = findViewById(R.id.button_add_symptom);
         add_symptom_button.setOnClickListener(new View.OnClickListener() {
@@ -405,6 +472,10 @@ public class AddSymptom extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setComment(String allergy){
+        comment_editText.setText("Specific Allergen: " + allergy + ".");
     }
 
     private void showData(DataSnapshot dataSnapshot){

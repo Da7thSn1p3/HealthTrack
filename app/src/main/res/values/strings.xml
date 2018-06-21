@@ -829,5 +829,19 @@
         <item>Z29 - Social problem NOS</item>
     </string-array>
 
+    <string-array name="Allergy">
+        <item>V01AA01 : Feather</item>
+        <item>V01AA02 : Grass pollen</item>
+        <item>V01AA03 : House dust mites</item>
+        <item>V01AA04 : Mould fungus and yeast fungus</item>
+        <item>V01AA05 : Tree pollen</item>
+        <item>V01AA07 : Insects</item>
+        <item>V01AA08 : Food</item>
+        <item>V01AA09 : Textiles</item>
+        <item>V01AA10 : Flowers</item>
+        <item>V01AA11 : Animals</item>
+        <item>V01AA20 : Various</item>
+    </string-array>
+
 
 </resources>

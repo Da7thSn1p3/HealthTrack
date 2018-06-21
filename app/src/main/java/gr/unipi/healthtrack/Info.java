@@ -46,5 +46,9 @@ public class Info extends AppCompatActivity {
         change_List.add("Added Edit Profile Button");
         change_List.add("When clicking name, phone and bdate load automatically");
         change_List.add("---------------------------------");
+        change_List.add("Release v1.4.1");
+        change_List.add("Added Specific Allergens in Symptoms");
+        change_List.add("AlertDialog opens with possible alergens when the correct symptom is selected");
+        change_List.add("---------------------------------");
     }
 }
