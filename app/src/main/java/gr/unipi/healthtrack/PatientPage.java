@@ -38,7 +38,7 @@ public class PatientPage extends AppCompatActivity {
     FirebaseAuth mAuth;
     private String userID;
     static String call, uname, uid;
-    String type;
+    String type, NAME, PHONE, BDATE;
     String phone;
     ArrayList<String> patient_List;
 
@@ -160,6 +160,9 @@ public class PatientPage extends AppCompatActivity {
             uInfo.setSex_spinner_text(ds.child(userID).getValue(UserInformation.class).getSex_spinner_text()); //set the sex_spinner_text
             uInfo.setType(ds.child(userID).getValue(UserInformation.class).getType());
             uInfo.setPhone(ds.child(userID).getValue(UserInformation.class).getPhone()); //set the phone
+            NAME = ds.child(userID).getValue(UserInformation.class).getName();
+            PHONE = ds.child(userID).getValue(UserInformation.class).getPhone();
+            BDATE = ds.child(userID).getValue(UserInformation.class).getBdate();
 
             textViewWelcome.setText("Welcome " + uname + ".");
         }
@@ -199,6 +202,14 @@ public class PatientPage extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
 
+                break;
+            case R.id.menuEditProfile:
+
+                Intent i = new Intent(PatientPage.this, EditProfile.class);
+                i.putExtra("phone", PHONE);
+                i.putExtra("bdate", BDATE);
+                i.putExtra("name", NAME);
+                startActivity(i);
                 break;
         }
 

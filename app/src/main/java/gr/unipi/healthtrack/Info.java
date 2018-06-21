@@ -42,5 +42,9 @@ public class Info extends AppCompatActivity {
         change_List.add("Added ability to delete Time and End Time of Symptoms");
         change_List.add("Added ability to edit Time and End Time of Symptoms");
         change_List.add("---------------------------------");
+        change_List.add("Release v1.4");
+        change_List.add("Added Edit Profile Button");
+        change_List.add("When clicking name, phone and bdate load automatically");
+        change_List.add("---------------------------------");
     }
 }

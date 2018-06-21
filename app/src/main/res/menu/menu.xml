@@ -2,11 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menuEditProfile"
+        android:title="Edit Profile"
+        android:background="@drawable/bg_button_register"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText"
+        />
+
+    <item
         android:id="@+id/menuLogout"
         android:title="Logout"
         android:background="@drawable/bg_button_register"
         android:textAllCaps="false"
         android:textColor="@color/colorText"
-    />
+        />
 
 </menu>

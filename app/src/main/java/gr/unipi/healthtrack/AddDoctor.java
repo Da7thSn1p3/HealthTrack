@@ -49,6 +49,7 @@ public class AddDoctor extends AppCompatActivity {
     public String doctor_spinner_text, doctor_uid;
     public Spinner doctorSpinner;
     ArrayAdapter<String> doctorAdapter;
+    String NAME, PHONE, BDATE;
 
     private ListView mList;
     ArrayList<String> doctor_List = new ArrayList<String>();
@@ -235,6 +236,9 @@ public class AddDoctor extends AppCompatActivity {
             uInfo.setType(ds.child(userID).getValue(UserInformation.class).getType());//set the type
             uInfo.setPhone(ds.child(userID).getValue(UserInformation.class).getPhone()); //set the phone
             uname = ds.child(userID).getValue(UserInformation.class).getName();
+            NAME = ds.child(userID).getValue(UserInformation.class).getName();
+            PHONE = ds.child(userID).getValue(UserInformation.class).getPhone();
+            BDATE = ds.child(userID).getValue(UserInformation.class).getBdate();
 
             textViewWelcome.setText("Welcome " + uname + ".");
         }
@@ -288,6 +292,14 @@ public class AddDoctor extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
 
+                break;
+            case R.id.menuEditProfile:
+
+                Intent i = new Intent(AddDoctor.this, EditProfile.class);
+                i.putExtra("phone", PHONE);
+                i.putExtra("bdate", BDATE);
+                i.putExtra("name", NAME);
+                startActivity(i);
                 break;
         }
 

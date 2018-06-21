@@ -37,7 +37,7 @@ public class PatientList extends AppCompatActivity {
     FirebaseAuth mAuth;
     private String userID;
     static String uname;
-    String type;
+    String type, NAME, PHONE, BDATE;
     ArrayList<String> patient_List, patient_uid_List;
 
 
@@ -100,8 +100,6 @@ public class PatientList extends AppCompatActivity {
 
                     patient_List.add("Patient name: " + patient_name + " ");
                     patient_uid_List.add(patient_uid);
-                    //patient_List.add("Symptoms and timestamps: ");
-                    //showSymptoms(patient_uid);
                 }
                 patient_List.add("-----------------------------------------------------------");
                 patient_uid_List.add("-----------------------------------------------------------");
@@ -112,28 +110,6 @@ public class PatientList extends AppCompatActivity {
             }
         });
     }
-/*
-    public void showSymptoms(String uid){
-        FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Symptoms").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot SymptomSnapshot) {
-                if(SymptomSnapshot.exists()) {
-                    for(DataSnapshot ds : SymptomSnapshot.getChildren()) {
-                        //Toast.makeText(getApplicationContext(), ds.child("symptom").getValue().toString(), Toast.LENGTH_LONG).show();
-                        patient_List.add("Symptom: " + ds.child("symptom").getValue().toString());
-                        patient_List.add("Time: " + ds.child("timestamp").getValue().toString());
-                        patient_List.add("Comment: " + ds.child("comment").getValue().toString());
-                        patient_List.add("---------------------------------");
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-    */
 
     private void loadUserInformation() {
 
@@ -163,6 +139,9 @@ public class PatientList extends AppCompatActivity {
             uInfo.setSex_spinner_text(ds.child(userID).getValue(UserInformation.class).getSex_spinner_text()); //set the sex_spinner_text
             uInfo.setType(ds.child(userID).getValue(UserInformation.class).getType());
             uInfo.setPhone(ds.child(userID).getValue(UserInformation.class).getPhone()); //set the phone
+            NAME = ds.child(userID).getValue(UserInformation.class).getName();
+            PHONE = ds.child(userID).getValue(UserInformation.class).getPhone();
+            BDATE = ds.child(userID).getValue(UserInformation.class).getBdate();
 
             textViewWelcome.setText("Welcome " + uname + ".");
         }
@@ -202,6 +181,14 @@ public class PatientList extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
 
+                break;
+            case R.id.menuEditProfile:
+
+                Intent i = new Intent(PatientList.this, EditProfile.class);
+                i.putExtra("phone", PHONE);
+                i.putExtra("bdate", BDATE);
+                i.putExtra("name", NAME);
+                startActivity(i);
                 break;
         }
 

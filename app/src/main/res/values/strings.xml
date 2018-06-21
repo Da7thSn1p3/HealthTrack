@@ -49,6 +49,8 @@
     <string name="comments">Enter any comments here:</string>
     <string name="app_info">This application is simple. If you are a doctor, have your patients install this app, and install it to your cellphone too. Register as a doctor using the Register button and you will automatically login. Your screen will be empty for now. Until, as a patient, someone selects you as their doctor. They can see you in the select doctor screen, and if they select you, you can view them in your logged in state. Click them and, if they have selected symptoms, you can view them. As a patient, you can delete all your symptoms together or, long click one to specifically delete it. As a doctor you can click an a patients phone number to call him.</string>
     <string name="changelog">Changelog:</string>
+    <string name="editprofile">Edit Profile:</string>
+    <string name="save">Save</string>
 
 
     <string-array name="sex_array">

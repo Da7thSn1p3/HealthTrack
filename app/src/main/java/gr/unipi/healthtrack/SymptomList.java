@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.DatePicker;
@@ -39,7 +40,7 @@ import java.util.Calendar;
 
 public class SymptomList extends AppCompatActivity {
 
-    String date="", date_time = "";
+    String NAME, PHONE, BDATE, date="", date_time = "";
     int mYear;
     int mMonth;
     int mDay;
@@ -323,6 +324,9 @@ public class SymptomList extends AppCompatActivity {
             uInfo.setType(ds.child(userID).getValue(UserInformation.class).getType());
             uInfo.setPhone(ds.child(userID).getValue(UserInformation.class).getPhone()); //set the phone
             uname = ds.child(userID).getValue(UserInformation.class).getName();
+            NAME = ds.child(userID).getValue(UserInformation.class).getName();
+            PHONE = ds.child(userID).getValue(UserInformation.class).getPhone();
+            BDATE = ds.child(userID).getValue(UserInformation.class).getBdate();
 
             textViewWelcome.setText("Welcome " + uname + ".");
             symptom_List.add("Patient name: " + uname + " .");
@@ -441,6 +445,15 @@ public class SymptomList extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
 
+                break;
+
+            case R.id.menuEditProfile:
+
+                Intent i = new Intent(SymptomList.this, EditProfile.class);
+                i.putExtra("phone", PHONE);
+                i.putExtra("bdate", BDATE);
+                i.putExtra("name", NAME);
+                startActivity(i);
                 break;
         }
 
