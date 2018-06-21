@@ -28,3 +28,4 @@ Our app allows, doctors to keep track of their patients, after they leave the ho
 "Added Specific Allergens in Symptoms");
 "AlertDialog opens with possible alergens when the correct symptom is selected");
 "---------------------------------");
+
