@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/anatomy_background"
+    tools:context="gr.unipi.healthtrack.AddSymptom">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#CC000000"
+        android:padding="@dimen/default_padding">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="397dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_edittext"></android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="326dp"
+            android:layout_height="58dp"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignStart="@+id/toolbar"
+            android:background="@drawable/rounded_black"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="22sp" />
+
+        <TextView
+
+            android:layout_width="353dp"
+            android:layout_height="116dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif"
+            android:text="@string/add_symptoms"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="26sp" />
+
+        <RelativeLayout
+            android:layout_width="371dp"
+            android:layout_height="546dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/ICD10i_spinner"
+                android:background="@drawable/rounded_white"
+                android:bottomLeftRadius="20dp"
+                android:bottomRightRadius="20dp"
+                android:text=""
+                android:textColor="#99FFFFFF"
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/ICD10_spinner"
+                android:background="@drawable/rounded_white"
+                android:bottomLeftRadius="20dp"
+                android:bottomRightRadius="20dp"
+                android:text=""
+                android:textColor="#99FFFFFF"
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
+
+            <Spinner
+                android:id="@+id/ICD10_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView1" />
+
+            <Spinner
+                android:id="@+id/ICD10i_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/ICD10"
+                android:textColor="@color/colorText" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ICD10_spinner"
+                android:text="@string/ICD10i"
+                android:textColor="@color/colorText" />
+
+            <TextView
+                android:id="@+id/comment_textView"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_above="@+id/comment_editText"
+                android:layout_alignParentStart="true"
+                android:text="@string/comments"
+                android:textColor="@color/colorText" />
+
+            <Button
+                android:id="@+id/button_add_symptom"
+                android:layout_width="158dp"
+                android:layout_height="67dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_button_register"
+                android:text="@string/add_symptom1"
+                android:textAllCaps="false"
+                android:textColor="@color/colorText" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ICD10i_spinner"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/comment_editText"
+                android:layout_width="match_parent"
+                android:layout_height="201dp"
+                android:layout_above="@+id/button_add_symptom"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:hint="@string/comments"
+                android:inputType="textMultiLine" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

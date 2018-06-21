@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background"
+    tools:context="gr.unipi.healthtrack.Register">
+
+    <RelativeLayout
+        android:layout_width="317dp"
+        android:layout_height="645dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_layout"
+        android:padding="@dimen/default_padding">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="274dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/clinic_spinner"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_white"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:text=""
+            android:textColor="#99FFFFFF"
+            android:topLeftRadius="20dp"
+            android:topRightRadius="20dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="273dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/sex_spinner"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_white"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:text=""
+            android:textColor="#99FFFFFF"
+            android:topLeftRadius="20dp"
+            android:topRightRadius="20dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="274dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/edit_text_phone"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_white"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:text=""
+            android:textColor="#99FFFFFF"
+            android:topLeftRadius="20dp"
+            android:topRightRadius="20dp" />
+
+        <TextView
+
+            android:id="@+id/textView"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif"
+            android:text="@string/app_name_register"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/app_name_size" />
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_name"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:nextFocusDown="@id/edit_text_email"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+        <EditText
+            android:id="@+id/edit_text_bdate"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_email"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_name"
+            android:editable="false"
+            android:hint="@string/bdate"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_password"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_email"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/edit_text_password"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_name"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/edit_text_phone"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+        <EditText
+            android:id="@+id/edit_text_phone"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_bdate"
+            android:layout_centerHorizontal="true"
+            android:digits="0123456789"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_phone"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:nextFocusDown="@id/button_register"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+        <Spinner
+            android:id="@+id/sex_spinner"
+            android:layout_width="275dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/edit_text_phone"
+            android:layout_centerHorizontal="true" />
+
+        <Spinner
+            android:id="@+id/clinic_spinner"
+            android:layout_width="275dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/sex_spinner"
+            android:layout_centerHorizontal="true" />
+
+        <Spinner
+            android:id="@+id/type_spinner"
+            android:layout_width="275dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/clinic_spinner"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="277dp"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/bg_button_register"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@color/colorText" />
+
+        <TextView
+            android:id="@+id/textViewSignIn"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_register"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="@string/SignIn"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

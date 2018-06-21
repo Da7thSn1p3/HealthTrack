@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background"
+    tools:context="gr.unipi.healthtrack.Login">
+
+    <LinearLayout
+        android:layout_width="319dp"
+        android:layout_height="473dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_layout"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding">
+
+        <TextView
+
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/app_name_login"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/app_name_size" />
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_email"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/edit_text_password"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/edit_text_phone"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="277dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_button_register"
+            android:text="@string/button_login"
+            android:textAllCaps="false"
+            android:textColor="@color/colorText" />
+
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="@string/SignUp"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

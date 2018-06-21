@@ -1,0 +1,831 @@
+<resources>
+    <string name="app_name">Health Track</string>
+    <string name="patient_list">Patient List</string>
+    <string name="patient_symptom">Patient Symptoms</string>
+    <string name="symptom_list">Symptom List</string>
+    <string name="add_symptoms">Add ICPC2 Symptoms</string>
+    <string name="add_doctor">Add Doctor</string>
+    <string name="remove_doctor">Remove Doctor</string>
+    <string name="doctor_list">Doctor List</string>
+    <string name="remove_symptom">Remove All Symptoms</string>
+    <string name="PatientList">Doctor Patient List</string>
+    <string name="app_name_doctor">Health Track - Doctor</string>
+    <string name="app_name_info">Health Track - Info</string>
+    <string name="app_name_info1">Here you will find valuable info about our app, and the changelog:</string>
+    <string name="app_name_register">Health Track - Register</string>
+    <string name="app_name_login">Health Track - Login</string>
+    <string name="app_name_patient">Health Track - Patient</string>
+    <string name="choose_doctor">Choose a doctor</string>
+    <string name="full_name">full name</string>
+    <string name="email">email</string>
+    <string name="bdate">birth date</string>
+    <string name="pick_bdate">Pick Date</string>
+    <string name="sex">Sex</string>
+    <string name="password">password</string>
+    <string name="phone">phone</string>
+    <string name="register">Register</string>
+    <string name="add_symptom">Add Symptom</string>
+    <string name="add_symptom1">Add Symptoms</string>
+    <string name="input_error_name">name required</string>
+    <string name="input_error_email">email required</string>
+    <string name="input_error_password">password required</string>
+    <string name="input_error_phone">phone required</string>
+    <string name="input_error_password_length">password should be atleast 6 characters long</string>
+    <string name="input_error_phone_invalid">enter a valid phone number</string>
+    <string name="input_error_bdate">dont forget your birth date</string>
+    <string name="registration_success">Registered Successfully</string>
+    <string name="registration_fail">Registered Failed</string>
+    <string name="input_error_email_invalid">enter a valid email</string>
+    <string name="input_error_age_invalid">enter a valid age</string>
+    <string name="SignUp">    Don\'t have an account? Sign up.</string>
+    <string name="textViewType">Welcome to our Health Tracking app.</string>
+    <string name="button_login">Log In</string>
+    <string name="button_info">App Information</string>
+    <string name="button_doctor">Doctor</string>
+    <string name="button_patient">Patient</string>
+    <string name="SignIn">    Already have an account? Sign in.</string>
+    <string name="ICD10">Enter first ICPC2 code related to Symptom.</string>
+    <string name="ICD10i">Enter second ICPC2 code related to Symptom.</string>
+    <string name="comments">Enter any comments here:</string>
+    <string name="app_info">This application is simple. If you are a doctor, have your patients install this app, and install it to your cellphone too. Register as a doctor using the Register button and you will automatically login. Your screen will be empty for now. Until, as a patient, someone selects you as their doctor. They can see you in the select doctor screen, and if they select you, you can view them in your logged in state. Click them and, if they have selected symptoms, you can view them. As a patient, you can delete all your symptoms together or, long click one to specifically delete it. As a doctor you can click an a patients phone number to call him.</string>
+    <string name="changelog">Changelog:</string>
+
+
+    <string-array name="sex_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="type_array">
+        <item>Doctor</item>
+        <item>Patient</item>
+    </string-array>
+
+    <string-array name="clinic_array">
+        <item>Tzaneio Piraeus</item>
+        <item>Metropolitan</item>
+        <item>KAT</item>
+        <item>Iaso</item>
+        <item>Metaxa</item>
+        <item>Kratiko Nikaias</item>
+    </string-array>
+
+    <string-array name="ICPC2_array">
+        <item>A - General and Unspecified</item>
+        <item>B - Blood, Blood Forming Organs, Immune Mechanism</item>
+        <item>D - Digestive</item>
+        <item>F - Eye</item>
+        <item>H - Ear</item>
+        <item>K - Cardiovascular</item>
+        <item>L - Musculoskeletal</item>
+        <item>N - Neurological</item>
+        <item>P - Psychological</item>
+        <item>R - Respiratory</item>
+        <item>S - Skin</item>
+        <item>T - Endocrine/Metabolic and Nutritional</item>
+        <item>U - Urological</item>
+        <item>W - Pregnancy, Childbearing, Family Planning</item>
+        <item>X - Female Genital</item>
+        <item>Y - Male Genital</item>
+        <item>Z - Social Problems</item>
+    </string-array>
+
+    <string-array name="A">
+        <item>A01 - Pain general/multiple sites</item>
+        <item>A02 - Chills</item>
+        <item>A03 - Fever</item>
+        <item>A04 - Weakness/tiredness general</item>
+        <item>A05 - Feeling ill</item>
+        <item>A06 - Fainting/syncope</item>
+        <item>A07 - Coma</item>
+        <item>A08 - Swelling</item>
+        <item>A09 - Sweating problem</item>
+        <item>A10 - Bleeding/haemorrhage NOS</item>
+        <item>A11 - Chest pain NOS</item>
+        <item>A13 - Concern about/fear of medical treatment</item>
+        <item>A16 - Irritable infant</item>
+        <item>A18 - Concern about appearance</item>
+        <item>A20 - Euthanasia request/discussion</item>
+        <item>A21 - Risk factor for malignancy</item>
+        <item>A23 - Risk factor NOS</item>
+        <item>A25 - Fear of death/dying</item>
+        <item>A26 - Fear of cancer, NOS</item>
+        <item>A27 - Fear of other disease NOS</item>
+        <item>A28 - Limited function/disability NOS</item>
+        <item>A29 - General symptom/complaint other</item>
+        <item>A70 - Tuberculosis</item>
+        <item>A71 - Measles</item>
+        <item>A72 - Chickenpox</item>
+        <item>A73 - Malaria</item>
+        <item>A74 - Rubella</item>
+        <item>A75 - Infectious mononucleosis</item>
+        <item>A76 - Viral exanthem other</item>
+        <item>A77 - Viral disease other/NOS</item>
+        <item>A78 - Infectious disease other/NOS</item>
+        <item>A79 - Malignancy NOS</item>
+        <item>A80 - Trauma/injury NOS</item>
+        <item>A81 - Multiple trauma/injuries</item>
+        <item>A82 - Secondary effect of trauma</item>
+        <item>A84 - Poisoning by medical agent</item>
+        <item>A85 - Adverse effect medical agent</item>
+        <item>A86 - Toxic effect non-medicinal substance</item>
+        <item>A87 - Complication of medical treatment</item>
+        <item>A88 - Adverse effect physical factor</item>
+        <item>A89 - Effect prosthetic device</item>
+        <item>A90 - Congenital anomaly nos/multiple</item>
+        <item>A91 - Abnormal result investigation NOS</item>
+        <item>A92 - Allergy/allergic reaction NOS</item>
+        <item>A93 - Premature newborn</item>
+        <item>A94 - Perinatal morbidity other</item>
+        <item>A95 - Perinatal mortality</item>
+        <item>A96 - Death</item>
+        <item>A97 - No disease</item>
+        <item>A98 - Health maintenance/preventive medicine</item>
+        <item>A99 - Disease/condition unspecnature/site</item>
+    </string-array>
+
+    <string-array name="B">
+        <item>B02 - Lymph gland(s) enlarged/painful</item>
+        <item>B04 - Blood symptom/complaint</item>
+        <item>B25 - Fear of AIDS/HIV</item>
+        <item>B26 - Fear of cancer blood/lymph</item>
+        <item>B27 - Fear of blood/lymph disease other</item>
+        <item>B28 - Limited function/disability (B)</item>
+        <item>B29 - Lymph/immune mechanism symptom/complaint other</item>
+        <item>B70 - Lymphadenitis acute</item>
+        <item>B71 - Lymphadenitis chronic/non-specific</item>
+        <item>B72 - Hodgkin Lymphoma</item>
+        <item>B73 - Leukaemia - Leukaemia</item>
+        <item>B74 - Malignant neoplasm blood other</item>
+        <item>B75 - Neoplasm blood benign/unspecified</item>
+        <item>B76 - Ruptured spleen traumatic</item>
+        <item>B77 - Injury blood/lymph/spleen other</item>
+        <item>B78 - Hereditary haemolytic anaemia</item>
+        <item>B79 - Congenital anomaly blood/lymph other</item>
+        <item>B80 - Iron deficiency anaemia</item>
+        <item>B81 - Anaemia vit B12/folate deficiency</item>
+        <item>B82 - Anaemia other/unspecified</item>
+        <item>B83 - Purpura/coagulation defect</item>
+        <item>B84 - Unexplained abnormal white cells</item>
+        <item>B87 - Splenomegaly</item>
+        <item>B90 - HIV-infection/AIDS</item>
+        <item>B99 - Blood/lymph/spleen disease other</item>
+    </string-array>
+
+    <string-array name="D">
+        <item>D01 - Abdominal pain/cramps general</item>
+        <item>D02 - Abdominal pain epigastric</item>
+        <item>D03 - Heartburn</item>
+        <item>D04 - Rectal/anal pain</item>
+        <item>D05 - Perianal itching</item>
+        <item>D06 - Abdominal pain localized other</item>
+        <item>D07 - Dyspepsia/indigestion</item>
+        <item>D08 - Flatulence/gas/belching</item>
+        <item>D09 - Nausea</item>
+        <item>D10 - Vomiting</item>
+        <item>D11 - Diarrhoea</item>
+        <item>D12 - Constipation</item>
+        <item>D13 - Jaundice</item>
+        <item>D14 - Haematemesis/vomiting blood</item>
+        <item>D15 - Melaena</item>
+        <item>D16 - Rectal bleeding</item>
+        <item>D17 - Incontinence of bowel</item>
+        <item>D18 - Change in faeces/bowel movements</item>
+        <item>D19 - Teeth/gum symptom/complaint</item>
+        <item>D20 - Mouth/tongue/lip symptom/complaint</item>
+        <item>D21 - Swallowing problem</item>
+        <item>D23 - Hepatomegaly</item>
+        <item>D24 - Abdominal mass NOS</item>
+        <item>D25 - Abdominal distension</item>
+        <item>D26 - Fear of cancer of digestive system</item>
+        <item>D27 - Fear of digestive disease other</item>
+        <item>D28 - Limited function/disability</item>
+        <item>D29 - Digestive symptom/complaint other</item>
+        <item>D70 - Gastrointestinal infection</item>
+        <item>D71 - Mumps</item>
+        <item>D72 - Viral hepatitis</item>
+        <item>D73 - Gastroenteritis presumed infection</item>
+        <item>D74 - Malignant neoplasm stomach</item>
+        <item>D75 - Malignant neoplasm colon/rectum</item>
+        <item>D76 - Malignant neoplasm pancreas</item>
+        <item>D77 - Malignant digestive neoplasm other/NOS</item>
+        <item>D78 - Neoplasm digestive system benign/unspecified</item>
+        <item>D79 - Foreign body digestive system</item>
+        <item>D80 - Injury digestive system other</item>
+        <item>D81 - Congenital anomaly digestive system</item>
+        <item>D82 - Teeth/gum disease</item>
+        <item>D83 - Mouth/tongue/lip disease</item>
+        <item>D84 - Oesophagus disease</item>
+        <item>D85 - Duodenal ulcer</item>
+        <item>D86 - Peptic ulcer other</item>
+        <item>D87 - Stomach function disorder</item>
+        <item>D88 - Appendicitis</item>
+        <item>D89 - Inguinal hernia</item>
+        <item>D90 - Hiatus hernia</item>
+        <item>D91 - Abdominal hernia other</item>
+        <item>D92 - Diverticular disease</item>
+        <item>D93 - Irritable bowel syndrome</item>
+        <item>D94 - Chronic enteritis/ulcerative colitis</item>
+        <item>D95 - Anal fissure/perianal abscess</item>
+        <item>D96 - Worms/other parasites</item>
+        <item>D97 - Liver disease NOS</item>
+        <item>D98 - Cholecystitis/cholelithiasis</item>
+        <item>D99 - Disease digestive system other</item>
+    </string-array>
+
+    <string-array name="F">
+        <item>F01 - Eye pain</item>
+        <item>F02 - Red eye</item>
+        <item>F03 - Eye discharge</item>
+        <item>F04 - Visual floaters/spots</item>
+        <item>F05 - Visual disturbance other</item>
+        <item>F13 - Eye sensation abnormal</item>
+        <item>F14 - Eye movements abnormal</item>
+        <item>F15 - Eye appearance abnormal</item>
+        <item>F16 - Eyelid symptom/complaint</item>
+        <item>F17 - Glasses symptom/complaint</item>
+        <item>F18 - Contact lens symptom/complaint</item>
+        <item>F27 - Fear of eye disease</item>
+        <item>F28 - Limited function/disability (F)</item>
+        <item>F29 - Eye symptom/complaint other</item>
+        <item>F70 - Conjunctivitis infectious</item>
+        <item>F71 - Conjunctivitis allergic</item>
+        <item>F72 - Blepharitis/stye/chalazion</item>
+        <item>F73 - Eye infection/inflammation other</item>
+        <item>F74 - Neoplasm of eye/adnexa</item>
+        <item>F75 - Contusion/haemorrhage eye</item>
+        <item>F76 - Foreign body in eye</item>
+        <item>F79 - Injury eye other</item>
+        <item>F80 - Blocked lacrimal duct of infant</item>
+        <item>F81 - Congenital anomaly eye other</item>
+        <item>F82 - Detached retina</item>
+        <item>F83 - Retinopathy</item>
+        <item>F84 - Macular degeneration</item>
+        <item>F85 - Corneal ulcer</item>
+        <item>F86 - Trachoma</item>
+        <item>F91 - Refractive error</item>
+        <item>F92 - Cataract</item>
+        <item>F93 - Glaucoma</item>
+        <item>F94 - Blindness</item>
+        <item>F95 - Strabismus</item>
+        <item>F99 - Eye/adnexa disease other</item>
+    </string-array>
+
+    <string-array name="H">
+        <item>H01 - Ear pain/earache</item>
+        <item>H02 - Hearing complaint</item>
+        <item>H03 - Tinnitus, ringing/buzzing ear</item>
+        <item>H04 - Ear discharge</item>
+        <item>H05 - Bleeding ear</item>
+        <item>H13 - Plugged feeling ear</item>
+        <item>H15 - Concern with appearance of ears</item>
+        <item>H27 - Fear of ear disease</item>
+        <item>H28 - Limited function/disability (H)</item>
+        <item>H29 - Ear symptom/complaint other</item>
+        <item>H70 - Otitis externa</item>
+        <item>H71 - Acute otitis media/myringitis</item>
+        <item>H72 - Serous otitis media</item>
+        <item>H73 - Eustachian salpingitis</item>
+        <item>H74 - Chronic otitis media</item>
+        <item>H75 - Neoplasm of ear</item>
+        <item>H76 - Foreign body in ear</item>
+        <item>H77 - Perforation ear drum</item>
+        <item>H78 - Superficial injury of ear</item>
+        <item>H79 - Ear injury other</item>
+        <item>H80 - Congenital anomaly of ear</item>
+        <item>H81 - Excessive ear wax</item>
+        <item>H82 - Vertiginous syndrome</item>
+        <item>H83 - Otosclerosis</item>
+        <item>H84 - Presbyacusis</item>
+        <item>H85 - Acoustic trauma</item>
+        <item>H86 - Deafness</item>
+        <item>H99 - Ear/mastoid disease other</item>
+    </string-array>
+
+    <string-array name="K">
+        <item>K01 - Heart pain</item>
+        <item>K02 - Pressure/tightness of heart</item>
+        <item>K03 - Cardiovascular pain NOS</item>
+        <item>K04 - Palpitations/awareness of heart</item>
+        <item>K05 - Irregular heartbeat other</item>
+        <item>K06 - Prominent veins</item>
+        <item>K07 - Swollen ankles/oedema</item>
+        <item>K22 - Risk factor cardiovascular disease</item>
+        <item>K24 - Fear of heart disease</item>
+        <item>K25 - Fear of hypertension</item>
+        <item>K27 - Fear cardiovascular disease other</item>
+        <item>K28 - Limited function/disability (K)</item>
+        <item>K29 - Cardiovascular sympt/complt other</item>
+        <item>K70 - Infection of circulatory system</item>
+        <item>K71 - Rheumatic fever/heart disease</item>
+        <item>K72 - Neoplasm cardiovascular</item>
+        <item>K73 - Congenital anomaly cardiovascular</item>
+        <item>K74 - Ischaemic heart dis with angina</item>
+        <item>K75 - Acute myocardial infarction</item>
+        <item>K76 - Ischaemic heart dis without angina</item>
+        <item>K77 - Heart failure</item>
+        <item>K78 - Atrial fibrillation/flutter</item>
+        <item>K79 - Paroxysmal tachycardia</item>
+        <item>K80 - Cardiac arrhythmia NOS</item>
+        <item>K81 - Heart/arterial murmur NOS</item>
+        <item>K82 - Pulmonary heart disease</item>
+        <item>K83 - Heart valve disease NOS</item>
+        <item>K84 - Heart disease other</item>
+        <item>K85 - Elevated blood pressure</item>
+        <item>K86 - Hypertension uncomplicated</item>
+        <item>K87 - Hypertension complicated</item>
+        <item>K88 - Postural hypotension</item>
+        <item>K89 - Transient cerebral ischaemia</item>
+        <item>K90 - Stroke/cerebrovascular accident</item>
+        <item>K91 - Cerebrovascular disease</item>
+        <item>K92 - Atherosclerosis/periph vascular dis</item>
+        <item>K93 - Pulmonary embolism</item>
+        <item>K94 - Phlebitis/thrombophlebitis</item>
+        <item>K95 - Varicose veins of leg</item>
+        <item>K96 - Haemorrhoids</item>
+        <item>K99 - Cardiovascular disease other</item>
+    </string-array>
+
+    <string-array name="L">
+        <item>L01 - Neck symptom/complaint</item>
+        <item>L02 - Back symptom/complaint</item>
+        <item>L03 - Low back symptom/complaint</item>
+        <item>L04 - Chest symptom/complaint</item>
+        <item>L05 - Flank/axilla symptom/complaint</item>
+        <item>L07 - Jaw symptom/complaint</item>
+        <item>L08 - Shoulder symptom/complaint</item>
+        <item>L09 - Arm symptom/complaint</item>
+        <item>L10 - Elbow symptom/complaint</item>
+        <item>L11 - Wrist symptom/complaint</item>
+        <item>L12 - Hand/finger symptom/complaint</item>
+        <item>L13 - Hip symptom/complaint</item>
+        <item>L14 - Leg/thigh symptom/complaint</item>
+        <item>L15 - Knee symptom/complaint</item>
+        <item>L16 - Ankle symptom/complaint</item>
+        <item>L17 - Foot/toe symptom/complaint</item>
+        <item>L18 - Muscle pain</item>
+        <item>L19 - Muscle symptom/complaint NOS</item>
+        <item>L20 - Joint symptom/complaint NOS</item>
+        <item>L26 - Fear of cancer musculoskeletal</item>
+        <item>L27 - Fear of musculoskeletal dis other</item>
+        <item>L28 - Limited function/disability (L)</item>
+        <item>L29 - Musculoskeletal sympt/complt other</item>
+        <item>L70 - Infection of musculoskeletal system</item>
+        <item>L71 - Malignant neoplasm musculoskeletal</item>
+        <item>L72 - Fracture: radius/ulna</item>
+        <item>L73 - Fracture: tibia/fibula</item>
+        <item>L74 - Fracture: hand/foot bone</item>
+        <item>L75 - Fracture: femur</item>
+        <item>L76 - Fracture: other</item>
+        <item>L77 - Sprain/strain of ankle</item>
+        <item>L78 - Sprain/strain of knee</item>
+        <item>L79 - Sprain/strain of joint NOS</item>
+        <item>L80 - Dislocation/subluxation</item>
+        <item>L81 - Injury musculoskeletal NOS</item>
+        <item>L82 - Congenital anomaly musculoskeletal</item>
+        <item>L83 - Neck syndrome</item>
+        <item>L84 - Back syndrome without radiat pain</item>
+        <item>L85 - Acquired deformity of spine</item>
+        <item>L86 - Back syndrome with radiating pain</item>
+        <item>L87 - Bursitis/tendinitis/synovitis NOS</item>
+        <item>L88 - Rheumatoid/seropositive arthritis</item>
+        <item>L89 - Osteoarthrosis of hip</item>
+        <item>L90 - Osteoarthrosis of knee</item>
+        <item>L91 - Osteoarthrosis other</item>
+        <item>L92 - Shoulder syndrome</item>
+        <item>L93 - Tennis elbow</item>
+        <item>L94 - Osteochondrosis</item>
+        <item>L95 - Osteoporosis</item>
+        <item>L96 - Acute internal damage knee</item>
+        <item>L97 - Neoplasm musculoskel benign/unspec</item>
+        <item>L98 - Acquired deformity of limb</item>
+        <item>L99 - Musculoskeletal disease other</item>
+    </string-array>
+
+    <string-array name="N">
+        <item>N01 - Headache</item>
+        <item>N03 - Pain face</item>
+        <item>N04 - Restless legs</item>
+        <item>N05 - Tingling fingers/feet/toes</item>
+        <item>N06 - Sensation disturbance other</item>
+        <item>N07 - Convulsion/seizure</item>
+        <item>N08 - Abnormal involuntary movements</item>
+        <item>N16 - Disturbance of smell/taste</item>
+        <item>N17 - Vertigo/dizziness</item>
+        <item>N18 - Paralysis/weakness</item>
+        <item>N19 - Speech disorder</item>
+        <item>N26 - Fear cancer neurological system</item>
+        <item>N27 - Fear of neurological disease other</item>
+        <item>N28 - Limited function/disability (N)</item>
+        <item>N29 - Neurological sympt/complt other</item>
+        <item>N70 - Poliomyelitis</item>
+        <item>N71 - Meningitis/encephalitis</item>
+        <item>N72 - Tetanus</item>
+        <item>N73 - Neurological infection other</item>
+        <item>N74 - Malignant neoplasm nervous system</item>
+        <item>N75 - Benign neoplasm nervous system</item>
+        <item>N76 - Neoplasm nervous system unspecified</item>
+        <item>N79 - Concussion</item>
+        <item>N80 - Head injury other</item>
+        <item>N81 - Injury nervous system other</item>
+        <item>N85 - Congenital anomaly neurological</item>
+        <item>N86 - Multiple sclerosis</item>
+        <item>N87 - Parkinsonism</item>
+        <item>N88 - Epilepsy</item>
+        <item>N89 - Migraine</item>
+        <item>N90 - Cluster headache</item>
+        <item>N91 - Facial paralysis/bell's palsy</item>
+        <item>N92 - Trigeminal neuralgia</item>
+        <item>N93 - Carpal tunnel syndrome</item>
+        <item>N94 - Peripheral neuritis/neuropathy</item>
+        <item>N95 - Tension headache</item>
+        <item>N99 - Neurological disease other</item>
+    </string-array>
+
+    <string-array name="P">
+        <item>P01 - Feeling anxious/nervous/tense</item>
+        <item>P02 - Acute stress reaction</item>
+        <item>P03 - Feeling depressed</item>
+        <item>P04 - Feeling/behaving irritable/angry</item>
+        <item>P05 - Senility, feeling/behaving old</item>
+        <item>P06 - Sleep disturbance</item>
+        <item>P07 - Sexual desire reduced</item>
+        <item>P08 - Sexual fulfilment reduced</item>
+        <item>P09 - Sexual preference concern</item>
+        <item>P10 - Stammering/stuttering/tic</item>
+        <item>P11 - Eating problem in child</item>
+        <item>P12 - Bedwetting/enuresis</item>
+        <item>P13 - Encopresis/bowel training problem</item>
+        <item>P15 - Chronic alcohol abuse</item>
+        <item>P16 - Acute alcohol abuse</item>
+        <item>P17 - Tobacco abuse</item>
+        <item>P18 - Medication abuse</item>
+        <item>P19 - Drug abuse</item>
+        <item>P20 - Memory disturbance</item>
+        <item>P22 - Child behaviour symptom/complaint</item>
+        <item>P23 - Adolescent behaviour sympt/compl</item>
+        <item>P24 - Specific learning problem</item>
+        <item>P25 - Phase of life problem adult</item>
+        <item>P27 - Fear of mental disorder</item>
+        <item>P28 - Limited function/disability (P)</item>
+        <item>P29 - Psychological sympt/compl other</item>
+        <item>P70 - Dementia</item>
+        <item>P71 - Organic psychosis other</item>
+        <item>P72 - Schizophrenia</item>
+        <item>P73 - Affective psychosis</item>
+        <item>P74 - Anxiety disorder/anxiety state</item>
+        <item>P75 - Somatization disorder</item>
+        <item>P76 - Depressive disorder</item>
+        <item>P77 - Suicide/suicide attempt</item>
+        <item>P78 - Neuraesthenia/surmenage</item>
+        <item>P79 - Phobia/compulsive disorder</item>
+        <item>P80 - Personality disorder</item>
+        <item>P81 - Hyperkinetic disorder</item>
+        <item>P82 - Post-traumatic stress disorder</item>
+        <item>P85 - Mental retardation</item>
+        <item>P86 - Anorexia nervosa/bulimia</item>
+        <item>P98 - Psychosis NOS/other</item>
+        <item>P99 - Psychological disorders other</item>
+    </string-array>
+
+    <string-array name="R">
+        <item>R01 - Pain respiratory system</item>
+        <item>R02 - Shortness of breath/dyspnoea</item>
+        <item>R03 - Wheezing</item>
+        <item>R04 - Breathing problem other</item>
+        <item>R05 - Cough</item>
+        <item>R06 - Nose bleed/epistaxis</item>
+        <item>R07 - Sneezing/nasal congestion</item>
+        <item>R08 - Nose symptom/complaint other</item>
+        <item>R09 - Sinus symptom/complaint</item>
+        <item>R21 - Throat symptom/complaint</item>
+        <item>R23 - Voice symptom/complaint</item>
+        <item>R24 - Haemoptysis</item>
+        <item>R25 - Sputum/phlegm abnormal</item>
+        <item>R26 - Fear  cancer  respiratory system</item>
+        <item>R27 - Fear of respiratory disease other</item>
+        <item>R28 - Limited function/disability (R)</item>
+        <item>R29 - Respiratory symptom/complaint other</item>
+        <item>R71 - Whooping cough</item>
+        <item>R72 - Strep throat</item>
+        <item>R73 - Boil/abscess nose</item>
+        <item>R74 - Upper respiratory infection acute</item>
+        <item>R75 - Sinusitis acute/chronic</item>
+        <item>R76 - Tonsillitis acute</item>
+        <item>R77 - Laryngitis/tracheitis acute</item>
+        <item>R78 - Acute bronchitis/bronchiolitis</item>
+        <item>R79 - Chronic bronchitis</item>
+        <item>R80 - Influenza</item>
+        <item>R81 - Pneumonia</item>
+        <item>R82 - Pleurisy/pleural effusion</item>
+        <item>R83 - Respiratory infection other</item>
+        <item>R84 - Malignant neoplasm bronchus/lung</item>
+        <item>R85 - Malignant neopl respiratory other</item>
+        <item>R86 - Benign neoplasm respiratory</item>
+        <item>R87 - Foreign body nose/larynx/bronchus</item>
+        <item>R88 - Injury respiratory other</item>
+        <item>R89 - Congenital anomaly respiratory</item>
+        <item>R90 - Hypertrophy tonsils/adenoids</item>
+        <item>R92 - Neoplasm respiratory unspecified</item>
+        <item>R95 - Chron obstructive pulmonary disease</item>
+        <item>R96 - Asthma</item>
+        <item>R97 - Allergic rhinitis</item>
+        <item>R98 - Hyperventilation syndrome</item>
+        <item>R99 - Respiratory disease other</item>
+    </string-array>
+
+    <string-array name="S">
+        <item>S01 - Pain/tenderness of skin</item>
+        <item>S02 - Pruritus</item>
+        <item>S03 - Warts</item>
+        <item>S04 - Lump/swelling localized</item>
+        <item>S05 - Lumps/swellings generalized</item>
+        <item>S06 - Rash localized</item>
+        <item>S07 - Rash generalized</item>
+        <item>S08 - Skin colour change</item>
+        <item>S09 - Infected finger/toe</item>
+        <item>S10 - Boil/carbuncle</item>
+        <item>S11 - Skin infection post-traumatic</item>
+        <item>S12 - Insect bite/sting</item>
+        <item>S13 - Animal/human bite</item>
+        <item>S14 - Burn/scald</item>
+        <item>S15 - Foreign body in skin</item>
+        <item>S16 - Bruise/contusion</item>
+        <item>S17 - Abrasion/scratch/blister</item>
+        <item>S18 - Laceration/cut</item>
+        <item>S19 - Skin injury other</item>
+        <item>S20 - Corn/callosity</item>
+        <item>S21 - Skin texture symptom/complaint</item>
+        <item>S22 - Nail symptom/complaint</item>
+        <item>S23 - Hair loss/baldness</item>
+        <item>S24 - Hair/scalp symptom/complaint other</item>
+        <item>S26 - Fear of cancer of skin</item>
+        <item>S27 - Fear of skin disease other</item>
+        <item>S28 - Limited function/disability (S)</item>
+        <item>S29 - Skin symptom/complaint other</item>
+        <item>S70 - Herpes zoster</item>
+        <item>S71 - Herpes simplex</item>
+        <item>S72 - Scabies/other acariasis</item>
+        <item>S73 - Pediculosis/skin infestation other</item>
+        <item>S74 - Dermatophytosis</item>
+        <item>S75 - Moniliasis/candidiasis skin</item>
+        <item>S76 - Skin infection other</item>
+        <item>S77 - Malignant neoplasm of skin</item>
+        <item>S78 - Lipoma</item>
+        <item>S79 - Neoplasm skin benign/unspecified</item>
+        <item>S80 - Solar keratosis/sunburn</item>
+        <item>S81 - Haemangioma/lymphangioma</item>
+        <item>S82 - Naevus/mole</item>
+        <item>S83 - Congenital skin anomaly other</item>
+        <item>S84 - Impetigo</item>
+        <item>S85 - Pilonidal cyst/fistula</item>
+        <item>S86 - Dermatitis seborrhoeic</item>
+        <item>S87 - Dermatitis/atopic eczema</item>
+        <item>S88 - Dermatitis contact/allergic</item>
+        <item>S89 - Diaper rash</item>
+        <item>S90 - Pityriasis rosea</item>
+        <item>S91 - Psoriasis</item>
+        <item>S92 - Sweat gland disease</item>
+        <item>S93 - Sebaceous cyst</item>
+        <item>S94 - Ingrowing nail</item>
+        <item>S95 - Molluscum contagiosum</item>
+        <item>S96 - Acne</item>
+        <item>S97 - Chronic ulcer skin</item>
+        <item>S98 - Urticaria</item>
+        <item>S99 - Skin disease other</item>
+    </string-array>
+
+    <string-array name="T">
+        <item>T01 - Excessive thirst</item>
+        <item>T02 - Excessive appetite</item>
+        <item>T03 - Loss of appetite</item>
+        <item>T04 - Feeding problem of infant/child</item>
+        <item>T05 - Feeding problem of adult</item>
+        <item>T07 - Weight gain</item>
+        <item>T08 - Weight loss</item>
+        <item>T10 - Growth delay</item>
+        <item>T11 - Dehydration</item>
+        <item>T26 - Fear of cancer of endocrine system</item>
+        <item>T27 - Fear endocrine/metabol disease other</item>
+        <item>T28 - Limited function/disability (T)</item>
+        <item>T29 - Endocr/metab/nutr sympt/compl other</item>
+        <item>T70 - Endocrine infection</item>
+        <item>T71 - Malignant neoplasm thyroid</item>
+        <item>T72 - Benign neoplasm thyroid</item>
+        <item>T73 - Neoplasm endocrine other/unspecified</item>
+        <item>T78 - Thyroglossal duct/cyst</item>
+        <item>T80 - Congen  anomaly endocrine/metabolic</item>
+        <item>T81 - Goitre</item>
+        <item>T82 - Obesity</item>
+        <item>T83 - Overweight</item>
+        <item>T85 - Hyperthyroidism/thyrotoxicosis</item>
+        <item>T86 - Hypothyroidism/myxoedema</item>
+        <item>T87 - Hypoglycaemia</item>
+        <item>T89 - Diabetes insulin dependent</item>
+        <item>T90 - Diabetes non-insulin dependent</item>
+        <item>T91 - Vitamin/nutritional deficiency</item>
+        <item>T92 - Gout</item>
+        <item>T93 - Lipid disorder</item>
+        <item>T99 - Endocr/metab/nutrit disease other</item>
+    </string-array>
+
+    <string-array name="U">
+        <item>U01 - Dysuria/painful urination</item>
+        <item>U02 - Urinary frequency/urgency</item>
+        <item>U04 - Incontinence urine</item>
+        <item>U05 - Urination problems other</item>
+        <item>U06 - Haematuria</item>
+        <item>U07 - Urine symptom/complaint other</item>
+        <item>U08 - Urinary retention</item>
+        <item>U13 - Bladder symptom/complaint other</item>
+        <item>U14 - Kidney symptom/complaint</item>
+        <item>U26 - Fear of cancer of urinary system</item>
+        <item>U27 - Fear of urinary disease other</item>
+        <item>U28 - Limited function/disability (U)</item>
+        <item>U29 - Urinary symptom/complaint other</item>
+        <item>U70 - Pyelonephritis/pyelitis</item>
+        <item>U71 - Cystitis/urinary infection other</item>
+        <item>U72 - Urethritis</item>
+        <item>U75 - Malignant neoplasm of kidney</item>
+        <item>U76 - Malignant neoplasm of bladder</item>
+        <item>U77 - Malignant neopl urinary tract other</item>
+        <item>U78 - Benign neoplasm urinary tract</item>
+        <item>U79 - Neoplasm urinary tract unspecified</item>
+        <item>U80 - Injury urinary tract</item>
+        <item>U85 - Congenital anomaly urinary tract</item>
+        <item>U88 - Glomerulonephritis/nephrosis</item>
+        <item>U90 - Orthostatic albuminuria/proteinuria</item>
+        <item>U95 - Urinary calculus</item>
+        <item>U98 - Abnormal urine test NOS</item>
+        <item>U99 - Urinary disease other</item>
+    </string-array>
+
+    <string-array name="W">
+        <item>W01 - Question of pregnancy</item>
+        <item>W02 - Fear of pregnancy</item>
+        <item>W03 - Antepartum bleeding</item>
+        <item>W05 - Pregnancy vomiting/nausea</item>
+        <item>W10 - Contraception postcoital</item>
+        <item>W11 - Contraception oral</item>
+        <item>W12 - Contraception intrauterine</item>
+        <item>W13 - Sterilization female</item>
+        <item>W14 - Contraception female other</item>
+        <item>W15 - Infertility/subfertility female</item>
+        <item>W17 - Post-partum bleeding</item>
+        <item>W18 - Post-partum symptom/complaint other</item>
+        <item>W19 - Lactation symptom/complaint</item>
+        <item>W21 - Concern with body image in pregnancy</item>
+        <item>W27 - Fear of complications of pregnancy</item>
+        <item>W28 - Limited function/disability (W)</item>
+        <item>W29 - Pregnancy symptom/complaint other</item>
+        <item>W70 - Puerperal infection/sepsis</item>
+        <item>W71 - Other infect complic pregn/puerp</item>
+        <item>W72 - Malignant neopl related to pregnancy</item>
+        <item>W73 - Benign/unspecif neopl relat to pregn</item>
+        <item>W75 - Injury complicating pregnancy</item>
+        <item>W76 - Congen anom complicating pregnancy</item>
+        <item>W78 - Pregnancy</item>
+        <item>W79 - Unwanted pregnancy</item>
+        <item>W80 - Ectopic pregnancy</item>
+        <item>W81 - Toxaemia of pregnancy</item>
+        <item>W82 - Abortion spontaneous</item>
+        <item>W83 - Abortion induced</item>
+        <item>W84 - Pregnancy high risk</item>
+        <item>W85 - Gestational diabetes</item>
+        <item>W90 - Uncompl labour/delivery livebirth</item>
+        <item>W91 - Uncompl labour/delivery stillbirth</item>
+        <item>W92 - Compl labour/ delivery livebirth</item>
+        <item>W93 - Compl labour/delivery stillbirth</item>
+        <item>W94 - Puerperal mastitis</item>
+        <item>W95 - Breast dis in pregn/puerperium other</item>
+        <item>W96 - Complications of puerperium other</item>
+        <item>W99 - Disorder of pregn/delivery other</item>
+    </string-array>
+
+    <string-array name="X">
+        <item>X01 - Genital pain female</item>
+        <item>X02 - Menstrual pain</item>
+        <item>X03 - Intermenstrual pain</item>
+        <item>X04 - Painful intercourse female</item>
+        <item>X05 - Menstruation absent/scanty</item>
+        <item>X06 - Menstruation excessive</item>
+        <item>X07 - Menstruation irregular/frequent</item>
+        <item>X08 - Intermenstrual bleeding</item>
+        <item>X09 - Premenstrual symptom/complaint</item>
+        <item>X10 - Postponement of menstruation</item>
+        <item>X11 - Menopausal symptom/complaint</item>
+        <item>X12 - Postmenopausal bleeding</item>
+        <item>X13 - Postcoital bleeding</item>
+        <item>X14 - Vaginal discharge</item>
+        <item>X15 - Vaginal symptom/complaint other</item>
+        <item>X16 - Vulval symptom/complaint</item>
+        <item>X17 - Pelvis symptom/complaint female</item>
+        <item>X18 - Breast pain female</item>
+        <item>X19 - Breast lump/mass female</item>
+        <item>X20 - Nipple symptom/complaint female</item>
+        <item>X21 - Breast sympt/compl female other</item>
+        <item>X22 - Concern breast appearance fema</item>
+        <item>X23 - Fear sexually transm dis female</item>
+        <item>X24 - Fear of sexual dysfunction female</item>
+        <item>X25 - Fear of genital cancer female</item>
+        <item>X26 - Fear of breast cancer female</item>
+        <item>X27 - Fear genital/breast dis female other</item>
+        <item>X28 - Limited function/disability (X)</item>
+        <item>X29 - Genital sympt/compl female other</item>
+        <item>X70 - Syphilis female</item>
+        <item>X71 - Gonorrhoea female</item>
+        <item>X72 - Genital candidiasis female</item>
+        <item>X73 - Genital trichomoniasis female</item>
+        <item>X74 - Pelvic inflammatory disease</item>
+        <item>X75 - Malignant neoplasm cervix</item>
+        <item>X76 - Malignant neoplasm breast female</item>
+        <item>X77 - Malignant neopl genital female other</item>
+        <item>X78 - Fibromyoma uterus</item>
+        <item>X79 - Benign neoplasm breast female</item>
+        <item>X80 - Benign neoplasm female genital</item>
+        <item>X81 - Genital neopl female other/unspecif</item>
+        <item>X82 - Injury genital female</item>
+        <item>X83 - Congenital anomaly genital female</item>
+        <item>X84 - Vaginitis/vulvitis NOS</item>
+        <item>X85 - Cervical disease NOS</item>
+        <item>X86 - Abnormal cervix smear</item>
+        <item>X87 - Uterovaginal prolapse</item>
+        <item>X88 - Fibrocystic disease breast</item>
+        <item>X89 - Premenstrual tension syndrome</item>
+        <item>X90 - Genital herpes female</item>
+        <item>X91 - Condylomata acuminata female</item>
+        <item>X92 - Chlamydia infection genital female</item>
+        <item>X99 - Genital disease female other</item>
+    </string-array>
+
+    <string-array name="Y">
+        <item>Y01 - Pain in penis</item>
+        <item>Y02 - Pain in testis/scrotum</item>
+        <item>Y03 - Urethral discharge male</item>
+        <item>Y04 - Penis symptom/complaint other</item>
+        <item>Y05 - Scrotum/testis sympt/compl other</item>
+        <item>Y06 - Prostate symptom/complaint</item>
+        <item>Y07 - Impotence NOS</item>
+        <item>Y08 - Sexual function sympt/compl male</item>
+        <item>Y10 - Infertility/subfertility male</item>
+        <item>Y13 - Sterilization male</item>
+        <item>Y14 - Family planning male other</item>
+        <item>Y16 - Breast symptom/complaint male</item>
+        <item>Y24 - Fear of sexual dysfunction male</item>
+        <item>Y25 - Fear sexually transm disease male</item>
+        <item>Y26 - Fear of genital cancer male</item>
+        <item>Y27 - Fear of genital disease male other</item>
+        <item>Y28 - Limited function/disability (Y)</item>
+        <item>Y29 - Genital symptom/complaint male other</item>
+        <item>Y70 - Syphilis male</item>
+        <item>Y71 - Gonorrhoea male</item>
+        <item>Y72 - Genital herpes male</item>
+        <item>Y73 - Prostatitis/seminal vesiculitis</item>
+        <item>Y74 - Orchitis/epididymitis</item>
+        <item>Y75 - Balanitis</item>
+        <item>Y76 - Condylomata acuminata male</item>
+        <item>Y77 - Malignant neoplasm prostate</item>
+        <item>Y78 - Malign neopl male genital other</item>
+        <item>Y79 - Benign/unspecif neopl male genital</item>
+        <item>Y80 - Injury male genital</item>
+        <item>Y81 - Phimosis/redundant prepuce</item>
+        <item>Y82 - Hypospadias</item>
+        <item>Y83 - Undescended testicle</item>
+        <item>Y84 - Congenital genital anom male other</item>
+        <item>Y85 - Benign prostatic hypertrophy</item>
+        <item>Y86 - Hydrocoele</item>
+        <item>Y99 - Genital disease male other</item>
+    </string-array>
+
+    <string-array name="Z">
+        <item>Z01 - Poverty/financial problem</item>
+        <item>Z02 - Food/water problem</item>
+        <item>Z03 - Housing/neighbourhood problem</item>
+        <item>Z04 - Social cultural problem</item>
+        <item>Z05 - Work problem</item>
+        <item>Z06 - Unemployment problem</item>
+        <item>Z07 - Education problem</item>
+        <item>Z08 - Social welfare problem</item>
+        <item>Z09 - Legal problem</item>
+        <item>Z10 - Health care system problem</item>
+        <item>Z11 - Compliance/being ill problem</item>
+        <item>Z12 - Relationship problem with partner</item>
+        <item>Z13 - Partner's behaviour problem</item>
+        <item>Z14 - Partner illness problem</item>
+        <item>Z15 - Loss/death of partner problem</item>
+        <item>Z16 - Relationship problem with child</item>
+        <item>Z18 - Illness problem with child</item>
+        <item>Z19 - Loss/death of child problem</item>
+        <item>Z20 - Relationship problem parent/fam memb</item>
+        <item>Z21 - Behaviour problem parent/fam memb</item>
+        <item>Z22 - Illness problem parent/family memb</item>
+        <item>Z23 - Loss/death parent/fam memb problem</item>
+        <item>Z24 - Relationship problem friend</item>
+        <item>Z25 - Assault/harmful event problem</item>
+        <item>Z27 - Fear of a social problem</item>
+        <item>Z28 - Limited function/disability (Z)</item>
+        <item>Z29 - Social problem NOS</item>
+    </string-array>
+
+
+</resources>

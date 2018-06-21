@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/med_background"
+    tools:context="gr.unipi.healthtrack.PatientPage">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#CC000000"
+        android:padding="@dimen/default_padding">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="397dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_edittext"></android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="326dp"
+            android:layout_height="58dp"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignStart="@+id/toolbar"
+            android:background="@drawable/rounded_black"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="22sp" />
+
+        <TextView
+
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif"
+            android:text="@string/patient_symptom"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/app_name_size" />
+
+        <RelativeLayout
+            android:layout_width="339dp"
+            android:layout_height="511dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_edittext">
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="516dp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
