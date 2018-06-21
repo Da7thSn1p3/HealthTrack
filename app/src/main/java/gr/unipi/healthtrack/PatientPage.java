@@ -120,6 +120,9 @@ public class PatientPage extends AppCompatActivity {
                     for(DataSnapshot ds : SymptomSnapshot.getChildren()) {
                         patient_List.add("Symptom: " + ds.child("symptom").getValue().toString());
                         patient_List.add("Time: " + ds.child("timestamp").getValue().toString());
+                        if(ds.child("endtime").exists()){
+                            patient_List.add("Symptom End Time: " + ds.child("endtime").getValue().toString());
+                        }
                         patient_List.add("Comment: " + ds.child("comment").getValue().toString());
                         patient_List.add("--------------------------------------------");
                     }
