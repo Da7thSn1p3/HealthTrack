@@ -2,6 +2,7 @@ package gr.unipi.healthtrack;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,10 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -28,8 +35,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class SymptomList extends AppCompatActivity {
+
+    String date="", date_time = "";
+    int mYear;
+    int mMonth;
+    int mDay;
+
+    int mHour;
+    int mMinute;
 
     private DatabaseReference myRef;
     FirebaseAuth mAuth;
@@ -97,7 +113,7 @@ public class SymptomList extends AppCompatActivity {
         mList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                if(!symptom_uid_List.get(position).equals("")){
+                if(symptom_uid_List.get(position+1).equals("Time")){
                     delete_uid = symptom_uid_List.get(position);
                     AlertDialog.Builder adb = new AlertDialog.Builder(SymptomList.this);
                     adb.setTitle("Do you want to delete Symptom?");
@@ -118,11 +134,68 @@ public class SymptomList extends AppCompatActivity {
                     });
 
                     adb.show();
-                }
+                }if(symptom_uid_List.get(position).equals("EndTime")){
+                    delete_uid = symptom_uid_List.get(position-2);
+                    AlertDialog.Builder adb = new AlertDialog.Builder(SymptomList.this);
+                    adb.setTitle("Do you want to delete End Time");
+                    adb.setMessage("For selected "
+                            +parent.getItemAtPosition(position-2));
+                    adb.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // delete button
+                            removeEndTime(delete_uid);
+                        }
+                    });
+                    adb.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // null button
+                        }
+                    });
 
-                return false;
+                    adb.show();
+                }if(symptom_uid_List.get(position).equals("Time")){
+                    delete_uid = symptom_uid_List.get(position-1);
+                    AlertDialog.Builder adb = new AlertDialog.Builder(SymptomList.this);
+                    adb.setTitle("Do you want to delete Time");
+                    adb.setMessage("For selected "
+                            +parent.getItemAtPosition(position-1));
+                    adb.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // delete button
+                            removeTime(delete_uid);
+                        }
+                    });
+                    adb.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // null button
+                        }
+                    });
+
+                    adb.show();
+                }
+                return true;
             }
         });
+
+        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(symptom_uid_List.get(position).equals("EndTime")){
+                    String symptom_id = symptom_uid_List.get(position - 2);
+                    datePicker(symptom_id, "endtime");
+                    //pushEndTime(symptom_id, date_time);
+                }
+                if(symptom_uid_List.get(position).equals("Time")){
+                    String symptom_id = symptom_uid_List.get(position - 1);
+                    datePicker(symptom_id, "timestamp");
+                }
+            }
+        });
+
 
     }
 
@@ -136,7 +209,11 @@ public class SymptomList extends AppCompatActivity {
                         symptom_List.add("Symptom: " + ds.child("symptom").getValue().toString());
                         symptom_uid_List.add(ds.getKey());
                         symptom_List.add("Time: " + ds.child("timestamp").getValue().toString());
-                        symptom_uid_List.add("");
+                        symptom_uid_List.add("Time");
+                        if(ds.child("endtime").exists()){
+                            symptom_List.add("Symptom End Time: " + ds.child("endtime").getValue().toString());
+                            symptom_uid_List.add("EndTime");
+                        }
                         symptom_List.add("Comment: " + ds.child("comment").getValue().toString());
                         symptom_uid_List.add("");
                         symptom_List.add("-----------------------------------------------------------");
@@ -158,6 +235,40 @@ public class SymptomList extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
                     dataSnapshot.getRef().setValue(null);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void removeEndTime(String id){
+        String delete_id = id;
+        FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Symptoms").child(delete_id).child("endtime").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    dataSnapshot.getRef().setValue("Not set yet.");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void removeTime(String id){
+        String delete_id = id;
+        FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Symptoms").child(delete_id).child("timestamp").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    dataSnapshot.getRef().setValue("Time not set.");
                 }
             }
 
@@ -244,6 +355,72 @@ public class SymptomList extends AppCompatActivity {
     public void openLogin(){
         Intent signin_intent = new Intent(this, Login.class);
         startActivity(signin_intent);
+    }
+
+    private void datePicker(final String j, final String where1){
+
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,int monthOfYear, int dayOfMonth) {
+
+                        date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        //*************Call Time Picker Here ********************
+                        timePicker(j, where1);
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
+    }
+
+    private void timePicker(final String i, final String where2){
+        // Get Current Time
+        final Calendar c = Calendar.getInstance();
+        mHour = c.get(Calendar.HOUR_OF_DAY);
+        mMinute = c.get(Calendar.MINUTE);
+
+        // Launch Time Picker Dialog
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,int minute) {
+
+                        mHour = hourOfDay;
+                        mMinute = minute;
+
+                        String time= String.format("%02d:%02d", hourOfDay, minute);
+
+                        date_time = date + " " + time;
+                        pushEndTime(i, date_time, where2);
+                    }
+                }, mHour, mMinute, false);
+        timePickerDialog.show();
+    }
+
+    private void pushEndTime(String symptom_id, String Time, final String where){
+
+        FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Symptoms").child(symptom_id).child(where).setValue(Time).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    if(where.equals("endtime")){
+                        Toast.makeText(getApplicationContext(), "Successfully added End Time.!", Toast.LENGTH_SHORT).show();
+                    }else if(where.equals("timestamp")){
+                        Toast.makeText(getApplicationContext(), "Successfully added Time.!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
     @Override

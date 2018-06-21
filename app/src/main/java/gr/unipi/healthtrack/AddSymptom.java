@@ -361,6 +361,7 @@ public class AddSymptom extends AppCompatActivity {
 
     private void addSymptom(){
         final String symptom = Symptom;
+        final String endtime = "Not set yet.";
         final String comment = comment_editText.getText().toString().trim();
         String timestamp = dateFormat.format(date);
 
@@ -369,7 +370,8 @@ public class AddSymptom extends AppCompatActivity {
         Symptom Symptom = new Symptom(
                 timestamp,
                 symptom,
-                comment
+                comment,
+                endtime
         );
 
         DatabaseReference pushedSymptomRef = FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Symptoms").push();

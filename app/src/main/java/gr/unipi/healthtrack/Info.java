@@ -37,5 +37,10 @@ public class Info extends AppCompatActivity {
         change_List.add("Made some visual changes, rounded corners");
         change_List.add("Also changed gravity for welcome name, to be centered");
         change_List.add("---------------------------------");
+        change_List.add("Release v1.3");
+        change_List.add("Added End Time for Symptoms");
+        change_List.add("Added ability to delete Time and End Time of Symptoms");
+        change_List.add("Added ability to edit Time and End Time of Symptoms");
+        change_List.add("---------------------------------");
     }
 }
