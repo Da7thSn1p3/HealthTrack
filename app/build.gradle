@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "gr.unipi.healthtrack"
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 10
         versionName "1.4.1"
